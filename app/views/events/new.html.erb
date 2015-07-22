@@ -1,0 +1,47 @@
+<div class="modal hide fade" id="my-modal" title="My modal">
+  <div class="modal-header">
+    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+    <h3 id="myModalLabel">Event Details</h3>
+  </div>
+
+  <div class="modal-body">
+
+    <%= form_for @event do |f| %>
+
+    <%= f.label :start_date %>
+    <%= f.date_select :start_date, order: [:month, :day, :year]  %>
+
+    <%= f.label :end_date %>
+    <%= f.date_select :end_date, order: [:month, :day, :year] %>
+
+    <%= f.label :start_time %>
+    <%= f.time_select :start_time, {:ampm => true} %>
+
+    <%= f.label :end_time %>
+    <%= f.time_select :end_time, {:ampm => true} %>
+
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
+
+    <%= f.label :event_name %>
+    <%= f.text_field :event_name %>
+
+    <%= f.label :neighborhood %>
+    <%= f.text_field :neighborhood %>
+
+    <%= f.label :additional_info %>
+    <%= f.text_field :additional_info %>
+
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+    <%= render 'cities' %>
+
+    <%= f.submit %>
+
+    <% end %>
+  </div>
+
+  <div class="modal-footer">
+    <button aria-hidden="true" class="btn" data-dismiss="modal">Close</button>
+  </div>
+</div>
